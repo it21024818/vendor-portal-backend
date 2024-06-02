@@ -6,7 +6,7 @@ interface IProduct extends Document {
   name: string;
   images: string[];
   description: string;
-  isFavorite: boolean;
+  featuredImage: string;
 }
 
 const productSchema = new Schema<IProduct>({
@@ -15,7 +15,7 @@ const productSchema = new Schema<IProduct>({
   name: { type: String, required: true },
   images: { type: [String], required: true },
   description: { type: String, required: true },
-  isFavorite: { type: Boolean, default: false },
+  featuredImage: { type: String, required: false },
 });
 
 export default model<IProduct>('Product', productSchema);
